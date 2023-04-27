@@ -6,8 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 public class DataSource {
 
   public static Connection connect(){
@@ -54,8 +52,7 @@ public class DataSource {
     String sql = "select * from accounts where id = ?";
 
     try(Connection connection = connect();
-    PreparedStatement statement = connection.prepareStatement(sql)
-    ){
+        PreparedStatement statement = connection.prepareStatement(sql)){
       statement.setInt(1, accountId);
       try(ResultSet resultSet = statement.executeQuery()){
         account = new Account(
@@ -74,8 +71,7 @@ public class DataSource {
 
   public static void main(String[] args) {
     Customer customer = getCustomer("twest8o@friendfeed.com");
-    System.out.println(customer.getName());
-    Account account = geAccount(90431);
+    Account account = geAccount(customer.getAccountId());
     System.out.println(account.getBalance());
   }
   
