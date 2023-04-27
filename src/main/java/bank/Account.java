@@ -4,9 +4,9 @@ public class Account {
 
   private int id;
   private String type;
-  private float balance;
+  private double balance;
 
-  public Account(int id, String type, float balance){
+  public Account(int id, String type, double balance){
     setId(id);
     setType(type);
     setBalance(balance);
@@ -24,10 +24,10 @@ public class Account {
   public void setType(String type) {
     this.type = type;
   }
-  public float getBalance() {
+  public double getBalance() {
     return balance;
   }
-  public void setBalance(float balance) {
+  public void setBalance(double balance) {
     this.balance = balance;
   } 
   
