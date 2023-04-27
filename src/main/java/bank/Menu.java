@@ -86,6 +86,7 @@ public class Menu {
         case 4:
         Authenticator.logout(customer);
         System.out.println("Thanks for banking with Globe Bank International");
+        break;
         
         default:
         System.out.println("Invalid option. Please try again");
