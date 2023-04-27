@@ -49,14 +49,14 @@ public class DataSource {
     return customer;
   }
 
-  public static Account geAccount(int id){
+  public static Account geAccount(int accountId){
     Account account = null;
     String sql = "select * from accounts where id = ?";
 
     try(Connection connection = connect();
     PreparedStatement statement = connection.prepareStatement(sql)
     ){
-      statement.setInt(1, id);
+      statement.setInt(1, accountId);
       try(ResultSet resultSet = statement.executeQuery()){
         account = new Account(
           resultSet.getInt("id"),
